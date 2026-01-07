@@ -51,6 +51,8 @@ cohToTest1 <- merge(cohToTest1,Demo,by="PATNO",all.x=T)
 
 #Build PTSD dataset
 PTSD <- select(cohToTest1, c(HLDate, PDdate, hlDiff, SEX, ENROLL_AGE, trauma, COHORT_DEFINITION, PATNO))
+
+#Remove NA values from dataframe
 PTSD <- PTSD[!is.na(PTSD$trauma),]
 PTSD <- select(PTSD, c(trauma, PATNO, COHORT_DEFINITION))
 
