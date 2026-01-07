@@ -54,6 +54,8 @@ PTSD <- select(cohToTest1, c(HLDate, PDdate, hlDiff, SEX, ENROLL_AGE, trauma, CO
 
 #Remove NA values from dataframe
 PTSD <- PTSD[!is.na(PTSD$trauma),]
+
+#Select certain columns to keep in dataframe
 PTSD <- select(PTSD, c(trauma, PATNO, COHORT_DEFINITION))
 
 #Assign binary outcome
